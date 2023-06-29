@@ -22,5 +22,6 @@ public class GetUsersServlet extends HttpServlet {
         Set<User> users = warehouse.getUsers();
         req.setAttribute("users", users);
         req.getRequestDispatcher("/jsp/users.jsp").forward(req, resp);
+        super.doGet(req, resp);
     }
 }
