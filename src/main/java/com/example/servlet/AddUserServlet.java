@@ -14,7 +14,7 @@ import java.io.IOException;
 @WebServlet("/add")
 public class AddUserServlet extends HttpServlet {
 
-    private final Warehouse warehouse = Warehouse.getInstance();
+    private final static Warehouse warehouse = Warehouse.getInstance();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
