@@ -15,7 +15,7 @@ import java.util.Set;
 @WebServlet(urlPatterns = "/users")
 public class GetUsersServlet extends HttpServlet {
 
-    private final static Warehouse warehouse = Warehouse.getInstance();
+    private final Warehouse warehouse = Warehouse.getInstance();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
