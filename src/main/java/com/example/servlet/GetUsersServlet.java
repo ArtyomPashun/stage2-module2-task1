@@ -14,9 +14,12 @@ import java.util.Set;
 
 @WebServlet(urlPatterns = "/users")
 public class GetUsersServlet extends HttpServlet {
+
+    private final Warehouse warehouse = Warehouse.getInstance();
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Set<User> users = Warehouse.getInstance().getUsers();
+        Set<User> users = warehouse.getUsers();
         req.setAttribute("users", users);
         req.getRequestDispatcher("/jsp/users.jsp").forward(req, resp);
     }
